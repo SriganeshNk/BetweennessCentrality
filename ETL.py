@@ -105,36 +105,47 @@ def normalizeOut(filename, index):
     f.close()
     print BC[index]/sum(BC)
 
-
 def plot():
-    Total = [42386761714.0,42158338560.0, 40115509756.0, 32883228430.0, 20134083778.0, 7911841702.0]
-    Node = [10589014.0201, 350050670.634, 1715417960.14,  4857640744.96, 5325363855.22, 3009862742.87]
-    Norm = [0.000249818896087, 0.00830323685872, 0.0427619634045, 0.14772396072, 0.264494968529, 0.380425045929]
-    Time = [ 5*60+12.796 ,  10*60+44.934, 13*60+35.715, 14*60+30.349, 14*60+41.543, 14*60+42.633]
-    Total = [41118428808.0,  32346725624.0, 18213064022.0, 6688875402.0, 1271750808.0, 129843924.0]
-    Node = [2025985036.03, 5734455090.51,  5140384069.45, 2741962011.79, 660323291.628,  72895857.1766]
-    Norm = [0.049271946783, 0.177280852386, 0.282236095104, 0.409928702061,0.519223803496,0.561411384769]
-    Time = [0*60+6.677, 1*60+2.249, 4*60+40.717, 9*60+54.543, 13*60+23.598, 14*60+45.286]
-    tot = sum(Time)
-    newTime = []
-    for x in reversed(Time):
-        newTime.append(x/tot)
-    line1, = plt.plot(Total, label='Total')
-    line2, = plt.plot(Node, label='BC of Node')
-    line = [line1, line2]
-    leg = ['Total','BC of Node']
-    plt.legend(line, leg)
+    f = open('Fresh/finalplot15.txt','r')
+    num = 0
+    sampleSize = []
+    timeTaken = []
+    bcScores = []
+    for line in f:
+        if num == 0:
+            timeTaken = [float(x.strip().strip(']')) for x in line.split('[')[1].split(',')]
+        elif num == 1:
+            sampleSize = [float(x.strip().strip(']')) for x in line.split('[')[1].split(',')]
+        else:
+            isSame = {}
+            L = [float(x.strip().strip(']'))*10000000000.0 for x in line.split('[')[1].split(',')]
+            for x in L:
+                if x not in isSame:
+                    isSame[x] = 1
+                else:
+                    isSame[x] += 1
+            notZero = True if any(L) else False
+            notSame = True if len(isSame.keys()) > 1 else False
+            goodSample = True if L[0] > 100.0 else False
+            if notZero and notSame and goodSample:
+                bcScores.append(L)
+        num += 1
+    plt.plot(sampleSize, timeTaken)
+    plt.xlabel('Sample %')
+    plt.ylabel('Time Taken in minutes')
     plt.show()
-    line1, = plt.plot(Norm, label='Normalized BC of node')
-    line2, = plt.plot(newTime, label='Time')
-    leg = ['Normalized BC of Node', 'Time']
-    plt.legend([line1, line2], leg)
+    #num = 0
+    plt.xlabel('Sample %')
+    plt.ylabel('Betweenness Scores')
+    for line in bcScores:
+        if line[0] > 10000.0:
+            continue
+        plt.plot(sampleSize, line)
     plt.show()
 
 if __name__ == "__main__":
     plot()
-    """
-    global nodeMap
+    """global nodeMap
     G = readGraph(["segmentofaaa"])
     x = random.randrange(1, nodeMap['max'])
     for i in range(10):

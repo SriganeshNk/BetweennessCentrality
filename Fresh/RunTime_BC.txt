@@ -1,0 +1,155 @@
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_full.txt
+
+Sampling percentage : 100.000000
+
+n: 14018 m: 271950
+Number of vertices     : 14018
+Number of edges        : 271950
+
+
+real	3m11.800s
+user	3m11.664s
+sys	0m0.080s
+student@cse595:~/sriji/SN/snap-build/bin$ vim ../../Data/normalize.py 
+student@cse595:~/sriji/SN/snap-build/bin$ vim ../../Data/twitter_Out.txt 
+student@cse595:~/sriji/SN/snap-build/bin$ vim ../../Data/normalize.py 
+student@cse595:~/sriji/SN/snap-build/bin$ vim ../../Data/normalize.py 
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 90 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_90.txt
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_90.txt
+
+Sampling percentage : 90.000000
+
+n: 14018 m: 271950
+Number of vertices     : 14018
+Number of edges        : 271950
+
+
+real	2m52.426s
+user	2m52.319s
+sys	0m0.052s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 80 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_80.txt
+
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_80.txt
+
+Sampling percentage : 80.000000
+
+n: 14018 m: 271950
+Number of vertices     : 14018
+Number of edges        : 271950
+
+
+real	2m33.823s
+user	2m33.728s
+sys	0m0.044s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 70 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_70.txt
+
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_70.txt
+
+Sampling percentage : 70.000000
+
+n: 14018 m: 271950
+Number of vertices     : 14018
+Number of edges        : 271950
+
+
+real	2m13.972s
+user	2m13.866s
+sys	0m0.068s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 60 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_60.txt
+
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_60.txt
+
+Sampling percentage : 60.000000
+
+n: 14018 m: 271950
+Number of vertices     : 14018
+Number of edges        : 271950
+
+
+real	1m55.624s
+user	1m55.524s
+sys	0m0.060s
+
+
+
+
+
+ 
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_full.txt
+
+Sampling percentage : 100.000000
+
+n: 30222 m: 658689
+Number of vertices     : 30222
+Number of edges        : 658689
+
+    
+real	16m52.838s
+user	16m52.217s
+sys	0m0.256s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 90 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_90.txt
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_90.txt
+
+Sampling percentage : 90.000000
+
+n: 30222 m: 658689
+Number of vertices     : 30222
+Number of edges        : 658689
+
+    
+real	15m12.365s
+user	15m11.833s
+sys	0m0.196s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 80 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_80.txt
+
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_80.txt
+
+Sampling percentage : 80.000000
+
+n: 30222 m: 658689
+Number of vertices     : 30222
+Number of edges        : 658689
+
+    
+real	13m30.067s
+user	13m29.582s
+sys	0m0.188s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 70 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_70.txt
+
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_70.txt
+
+Sampling percentage : 70.000000
+
+n: 30222 m: 658689
+Number of vertices     : 30222
+Number of edges        : 658689
+
+    
+real	11m52.469s
+user	11m52.003s
+sys	0m0.208s
+student@cse595:~/sriji/SN/snap-build/bin$ time ./eval_vertex_betweenness -approx 60 -infile ../../Data/twitter.txt -graph dimacs -outfile ../../Data/twitter_Out_60.txt
+
+Input Graph File    : ../../Data/twitter.txt
+Output Graph File   : ../../Data/twitter_Out_60.txt
+
+Sampling percentage : 60.000000
+
+n: 30222 m: 658689
+Number of vertices     : 30222
+Number of edges        : 658689
+
+    
+real	10m10.157s
+user	10m9.780s
+sys	0m0.152s
+
